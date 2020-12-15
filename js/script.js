@@ -3,7 +3,27 @@ var email = prompt('What\'s your email address?')
 console.log(email + ' ->user\'s email');
 
 if (email === 'pinco.pallino@email.com') {
-  alert('\nHello ' + email + '! \n \n Now type your password to enter')
+  document.getElementById('granted').innerHTML = 'Hello ' + email + '! <br> Access granted.';
 } else {
-  alert('\nUnknown user. \n \nTry again please')
+  document.getElementById('denied').innerHTML = 'Unknown user. <br>Please try again';
+}
+
+
+
+
+
+// Gioco Dadi
+
+var min, max
+
+min = 1;
+max = 6;
+var dice = Math.floor(Math.random() * (max + 1 - min) + min)
+document.getElementById('dice').innerHTML = dice + ' is your lucky number';
+
+if (dice === '6') {
+  dice.className = 'green';
+} else {
+  dice.className = 'red';
+
 }
