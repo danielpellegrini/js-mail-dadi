@@ -3,9 +3,9 @@ var email = prompt('What\'s your email address?')
 console.log(email + ' ->user\'s email');
 
 if (email === 'pinco.pallino@email.com') {
-  document.getElementById('granted').innerHTML = 'Hello ' + email + '! <br> Access granted.';
+  alert('Hello ' + email + '! \nAccess granted.');
 } else {
-  document.getElementById('denied').innerHTML = 'Unknown user. <br>Please try again';
+  alert('Unknown user. \nPlease try again');
 }
 
 
@@ -14,16 +14,20 @@ if (email === 'pinco.pallino@email.com') {
 
 // Gioco Dadi
 
-var min, max
+// User
+var user =  Math.floor(Math.random() * 6) + 1;
+document.getElementById('dice').innerHTML = user;
 
-min = 1;
-max = 6;
-var dice = Math.floor(Math.random() * (max + 1 - min) + min)
-document.getElementById('dice').innerHTML = dice + ' is your lucky number';
+// Computer
+var computer = Math.floor(Math.random() * 6) + 1;
+document.getElementById('dice').innerHTML = computer;
 
-if (dice === '6') {
-  dice.className = 'green';
-} else {
-  dice.className = 'red';
-
+if (user > computer) {
+  document.getElementById('dice').innerHTML = 'Ha vinto ' + email + '!';
+}
+else if (user === computer) {
+  document.getElementById('dice').innerHTML = 'Pareggio';
+}
+else {
+  document.getElementById('dice').innerHTML = 'Ha vinto il computer';
 }
