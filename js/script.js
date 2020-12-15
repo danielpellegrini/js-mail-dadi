@@ -11,7 +11,9 @@ if (email === 'pinco.pallino@email.com') {
 var clickElement = document.getElementById('button-element');
 
 clickElement.addEventListener('click',
+  // On Click The Game Will Start
   function() {
+    // User
     var user = Math.floor(Math.random() * 6) + 1;
     document.getElementById('dice').innerHTML = user;
 
