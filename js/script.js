@@ -20,11 +20,16 @@ clickElement.addEventListener('click',
     document.getElementById('dice').innerHTML = computer;
 
     if (user > computer) {
-      document.getElementById('dice').innerHTML = 'Ha vinto ' + email + '!';
+      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+      '<br>Computer\'s result is: ' + computer +
+      '<br> Congrats! You won!';
     } else if (user === computer) {
-      document.getElementById('dice').innerHTML = 'Pareggio';
+      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+      '<br>Computer\'s result is: ' + computer + '<br>Draw';
     } else {
-      document.getElementById('dice').innerHTML = 'Ha vinto il computer';
+      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+      '<br>Computer\'s result is: ' + computer +
+      '<br> Oh no! You lost';
     }
   }
 );
