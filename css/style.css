@@ -1,16 +1,7 @@
-* {
-  font-size: 1.2em;
-}
-
-.green {
-  color: forestgreen;
-}
-
-.red {
-  color: crimson;
+h1 {
+  font-size: 2em;
 }
 
 #button-element:hover {
   cursor: pointer;
-  color: blue;
 }

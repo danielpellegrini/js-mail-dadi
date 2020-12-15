@@ -6,27 +6,19 @@ var approvedEmails = ['pinco@email.com', 'pallino@email.com', 'amilcare@email.co
 
 var emailFound = false;
 
-for (var i = 0; i <= approvedEmails.length; i++) {  
+for (var i = 0; i <= approvedEmails.length; i++) {
   if (email === approvedEmails[i]) {
     emailFound = true;
   }
 }
 
 if (emailFound) {
-  alert('yes')
+  document.getElementById('granted').innerText = 'Access granted';
 
-} else {
-  alert('no')
-}
+  // On Click The Game Will Start
+  var clickElement = document.getElementById('button-element');
 
-
-
-
-
-// On Click The Game Will Start
-var clickElement = document.getElementById('button-element');
-
-clickElement.addEventListener('click',
+  clickElement.addEventListener('click',
   function() {
     // User
     var user = Math.floor(Math.random() * 6) + 1;
@@ -38,15 +30,20 @@ clickElement.addEventListener('click',
 
     if (user > computer) {
       document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-        '<br>Computer\'s result is: ' + computer +
-        '<br> Congrats! You won!';
+      '<br>Computer\'s result is: ' + computer +
+      '<br> Congrats! You won!';
     } else if (user === computer) {
       document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-        '<br>Computer\'s result is: ' + computer + '<br>Draw';
+      '<br>Computer\'s result is: ' + computer + '<br>Draw';
     } else {
       document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-        '<br>Computer\'s result is: ' + computer +
-        '<br> Oh no! You lost';
+      '<br>Computer\'s result is: ' + computer +
+      '<br> Oh no! You lost';
     }
   }
 );
+
+} else {
+  document.getElementById('button-element').innerText = 'Access denied';
+
+}
