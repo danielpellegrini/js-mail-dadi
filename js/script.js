@@ -19,29 +19,29 @@ if (emailFound) {
   var clickElement = document.getElementById('button-element');
 
   clickElement.addEventListener('click',
-  function() {
-    // User
-    var user = Math.floor(Math.random() * 6) + 1;
-    document.getElementById('dice').innerHTML = user;
+    function() {
+      // User
+      var user = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('dice').innerHTML = user;
 
-    // Computer
-    var computer = Math.floor(Math.random() * 6) + 1;
-    document.getElementById('dice').innerHTML = computer;
+      // Computer
+      var computer = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('dice').innerHTML = computer;
 
-    if (user > computer) {
-      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-      '<br>Computer\'s result is: ' + computer +
-      '<br> Congrats! You won!';
-    } else if (user === computer) {
-      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-      '<br>Computer\'s result is: ' + computer + '<br>Draw';
-    } else {
-      document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
-      '<br>Computer\'s result is: ' + computer +
-      '<br> Oh no! You lost';
+      if (user > computer) {
+        document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+          '<br>Computer\'s result is: ' + computer +
+          '<br> Congrats! You won!';
+      } else if (user === computer) {
+        document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+          '<br>Computer\'s result is: ' + computer + '<br>Draw';
+      } else {
+        document.getElementById('dice').innerHTML = email + '\'s result is: ' + user +
+          '<br>Computer\'s result is: ' + computer +
+          '<br> Oh no! You lost';
+      }
     }
-  }
-);
+  );
 
 } else {
   document.getElementById('button-element').innerText = 'Access denied';
